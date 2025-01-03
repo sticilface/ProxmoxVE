@@ -11,7 +11,6 @@ verb_ip6
 catch_errors
 setting_up_container
 network_check
-sleep 30s
 update_os
 
 msg_info "Installing Dependencies"
