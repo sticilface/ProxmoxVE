@@ -195,7 +195,7 @@ EOF
   echo "nameserver 8.8.8.8" >> /etc/resolv.conf
   $STD apt-get update 
   $STD apt-get upgrade --fix-missing -y
-  $STD apt-get -o Dpkg::Options::="--force-confold --fix-missing" -y dist-upgrade
+  $STD apt-get -o Dpkg::Options::="--force-confold --fix-missing --retries=5 --delay=10" -y dist-upgrade
   rm -rf /usr/lib/python3.*/EXTERNALLY-MANAGED
   msg_ok "Updated Container OS"
 }
