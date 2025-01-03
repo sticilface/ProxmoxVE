@@ -11,7 +11,8 @@ verb_ip6
 catch_errors
 setting_up_container
 network_check
-update_os
+#update_os
+sleep 30
 
 msg_info "Installing Dependencies"
 $STD apt-get install -y curl
