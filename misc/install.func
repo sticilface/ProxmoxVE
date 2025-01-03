@@ -193,7 +193,7 @@ EOF
   fi
   msg_info "Attempting To Fix Missing"
   $STD apt-get update 
-  $STD apt-get upgrade
+  $STD apt-get upgrade --fix-missing -y
   $STD apt-get -o Dpkg::Options::="--force-confold --fix-missing" -y dist-upgrade
   rm -rf /usr/lib/python3.*/EXTERNALLY-MANAGED
   msg_ok "Updated Container OS"
