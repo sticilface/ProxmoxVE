@@ -193,9 +193,11 @@ EOF
   fi
   msg_info "Attempting To Fix Missing"
   echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+  
+  $STD apt-get clean
   $STD apt-get update 
-  $STD apt-get upgrade --fix-missing -y
-  $STD apt-get -o Dpkg::Options::="--force-confold --fix-missing --retries=5 --delay=10" -y dist-upgrade
+  #$STD apt-get upgrade --fix-missing --with-new-pkgs -y
+  $STD apt-get -o Dpkg::Options::="--force-confold --fix-missing --with-new-pkgs" -y dist-upgrade
   rm -rf /usr/lib/python3.*/EXTERNALLY-MANAGED
   msg_ok "Updated Container OS"
 }
